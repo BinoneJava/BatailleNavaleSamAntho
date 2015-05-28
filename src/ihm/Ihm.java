@@ -27,7 +27,7 @@ public class Ihm extends JFrame {
 		tabJPanels[1] = new JpJoueur(this);
 		tabJPanels[2] = new JpJeu(this);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(new Dimension(700,700));
+		this.setSize(new Dimension(1100,700));
 		//this.setResizable(false);
 		this.setTitle("Bataille navale");
 		this.changerPage(0);

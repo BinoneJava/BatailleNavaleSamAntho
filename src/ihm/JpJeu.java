@@ -37,21 +37,22 @@ public class JpJeu extends JPanel {
 	public JpJeu(Ihm z) {
 		
 		this.setLayout(new BorderLayout());
+		JPanel nord = new JPanel(new GridLayout(0,3));
+		this.add(nord, BorderLayout.NORTH);
 		JPanel centreLayout = new JPanel(new GridLayout(0, 2));
 		this.grille = new JpPlateau();
 		this.grille2 = new JpPlateau();
 		this.jeu = new Jeu(10, 10, nom);
-		b2 = new JButton("Placer les bateaux !");
-		this.add(new JLabel(nom), BorderLayout.WEST);
+		b2 = new JButton("Placez les bateaux !");
 		this.add(centreLayout, BorderLayout.CENTER);
+		nord.add(new JLabel("Vous"));
+		nord.add(b2);
+		nord.add(new JLabel("Ordinateur"));
 
 		centreLayout.add(grille);
 
 		centreLayout.add(grille2);
-
-		this.add(b2, BorderLayout.NORTH);
-		this.add(new JLabel(nom), BorderLayout.WEST);
-		this.add(new JLabel("Ordinateur"), BorderLayout.EAST);
+		
 		menu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

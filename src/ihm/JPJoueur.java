@@ -42,9 +42,9 @@ public class JpJoueur extends JPanel {
 		ancetre = mapage;
 		panelCentre = new JPanel();
 		JComboBox<String> choixDif = new JComboBox<String>();
-		choixDif.addItem("Facil");
-		choixDif.addItem("Difficil");
-		jtNom = new JTextField("                       ");
+		choixDif.addItem("Facile");
+		choixDif.addItem("Difficile");
+		jtNom = new JTextField(10);
 		jbValider = new JButton("Valider");
 		panelCentre = new JPanel(new GridBagLayout());
 		this.add(panelCentre, BorderLayout.CENTER);
@@ -52,7 +52,6 @@ public class JpJoueur extends JPanel {
 		c.gridy = 1;
 		panelCentre.add(new JLabel("Votre nom "),c);
 		c.gridx = 2;
-		c.gridwidth = 3;
 		panelCentre.add(jtNom,c);
 		c.gridx = 1;
 		c.gridy = 2;
@@ -66,14 +65,17 @@ public class JpJoueur extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				nom = (String) choixDif.getSelectedItem();
-				ancetre.setNom(nom);
+				nom = jtNom.getText();
 				ancetre.changerPage(2);
 			}
 		});
 	}
 	public String getNom(){
 		return this.nom;
+	}
+	
+	public JTextField getJTextField(){
+		return this.jtNom;
 	}
 
 }

@@ -1,10 +1,16 @@
 package ihm;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 import com.bataille.metier.CoupException;
 
@@ -50,7 +56,7 @@ public class JpPlateau extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("hey");
+			/*System.out.println("hey");
 			try {
 				con.getJeu().jouer(
 						Integer.parseInt(e.getActionCommand())/10,
@@ -58,7 +64,28 @@ public class JpPlateau extends JPanel {
 						con.getJeu().getPlateauJoueurUn());
 			} catch (CoupException e1) {
 				e1.printStackTrace();
-			}
+			}*/
+			JButton source = (JButton) e.getSource();
+			source.setText("X");
+			JDialog choix = new JDialog();
+			choix.setSize(new Dimension(400,300));
+			choix.setLayout(new BorderLayout());
+			JLabel quest = new JLabel("Vers où diriger le bateau ?", JLabel.CENTER);
+			choix.add(quest, BorderLayout.NORTH);
+			JPanel center = new JPanel(new GridLayout(4,1));
+			choix.add(center, BorderLayout.CENTER);
+			JRadioButton haut = new JRadioButton("Vers le Nord");
+			JRadioButton bas = new JRadioButton("Vers le Sud");
+			JRadioButton gauche = new JRadioButton("Vers l'Ouest");
+			JRadioButton droite = new JRadioButton("Vers l'Est");
+			center.add(haut);
+			center.add(bas);
+			center.add(gauche);
+			center.add(droite);
+			
+			JButton val = new JButton("valider");
+			choix.add(val, BorderLayout.SOUTH);
+			choix.setVisible(true);
 		}
 	}
 }

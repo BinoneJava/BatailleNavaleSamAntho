@@ -11,12 +11,13 @@ public class Plateau {
 	private String joueur;
 	private int longueur;
 	private int largeur;
-	
-	private List<Navire> listeNav;	
-	private List<Case> casesOccupees;	
+
+	private List<Navire> listeNav;
+	private List<Case> casesOccupees;
 	private boolean[][] coupsJoues;
 	private boolean[][] casesTouchees;
-	
+	public Case[][] lstCases;
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,11 +45,12 @@ public class Plateau {
 
 	public Plateau(int longueur, int largeur) {
 		super();
-		
+
 	}
-	
+
 	/**
-	 * Génère le plateau pour un joueur : taille, initialisation des tableaux de coups joués et cases touchées
+	 * Génère le plateau pour un joueur : taille, initialisation des tableaux de
+	 * coups joués et cases touchées
 	 * 
 	 * @param longueur
 	 * @param largeur
@@ -57,177 +59,186 @@ public class Plateau {
 	public Plateau(int longueur, int largeur, String joueur) {
 		this.longueur = longueur;
 		this.largeur = largeur;
-		
+
 		// vérifier long max, larg max; pas zéro/ pas négatif et minimum
-		// this.lstCases = new Case[longueur][largeur];
+		this.lstCases = new Case[longueur][largeur];
 		// affectation des dimensions
-		coupsJoues = new boolean[longueur][largeur];	
+		coupsJoues = new boolean[longueur][largeur];
 		casesTouchees = new boolean[longueur][largeur];
 		//
 		listeNav = new ArrayList<Navire>();
 		casesOccupees = new ArrayList<Case>();
 		this.setJoueur(joueur);
-		
+
 	}
-	
+
 	/**
-	 * Permet d'ajouter un navire (en principe au début du jeu) sur le plateau du joueur
+	 * Permet d'ajouter un navire (en principe au début du jeu) sur le plateau
+	 * du joueur
+	 * 
 	 * @param n
 	 */
-	public void ajouterNavire(Navire n){
+	public void ajouterNavire(Navire n) {
 		this.listeNav.add(n);
-		for (Case c : n.getCases()) {
-			this.casesOccupees.add(c);
-		}
-		
+		/*
+		 * for (Case c : n.getCases()) { this.casesOccupees.add(c); }
+		 */
+
 	}
-	
+
 	@Deprecated
-	private void ranedomiserPlacement(List<Navire> lstn){
-		
-		for (Navire n : lstn){		
+	public void ranedomiserPlacement(List<Navire> lstn) {
+
+		for (Navire n : lstn) {
 			List<Case> c = placerNavire(n);
 			n.setCases(c);
-			casesOccupees.addAll(c);			
+			this.casesOccupees.addAll(c);
 		}
-		
-		
+
 	}
+
 	@Deprecated
-	public List<Case> placerNavire(Navire n){
-		List<Case> lc = null;
-		Case c = null;
+	public List<Case> placerNavire(Navire n) {
+		ArrayList<Case> lc = new ArrayList<Case>();
+		Case c = new Case(1, 1, false, "~");
 		boolean isH = isPlacementHorizontal();
-		boolean nonContinu = false;
-		while (!nonContinu) {
-			for (int i = 0; i < n.getTaille(); i++){
-				c = getNextCase(c, isH, i);
-				if (c ==null) {
-					nonContinu = true;
-				}
-			}	
+		for (int i = 0; i < n.getTaille(); i++) {
+			c = getNextCase(c, isH, i);
+			int x = 0;
+			int y = 0;
+			if (c.getPosx() != x && c.getPosy() != y) {
+				x = c.getPosx();
+				y = c.getPosy();
+			}
+			lc.add(c);
 		}
 		return lc;
 	}
+
 	@Deprecated
 	private Case getNextCase(Case c, boolean isH, int i) {
 		Case cn = null;
 		if (i == 0) {
 			cn = getRandomCase();
+		} else {
+			if (isH) {
+				cn = new Case(c.getPosx() - 1, c.getPosy(), c.isEstTouche(),
+						c.getMotif());
+			} else {
+				cn = new Case(c.getPosx(), c.getPosy() - 1, c.isEstTouche(),
+						c.getMotif());
+			}
 		}
-		
-		
-		
+
 		return cn;
 	}
-	@Deprecated
-	private boolean isPlacementHorizontal(){
+
+	private boolean isPlacementHorizontal() {
 		Random r = new Random();
-		String placement = ""+0 + r.nextInt(1 - 0);
-		return Boolean.valueOf(placement);
+		return r.nextInt(2) == 1;
 	}
-	
+
 	@Deprecated
-	private Case getRandomCase(){
+	private Case getRandomCase() {
 		Case c = null;
-		//c= new Case();
+		c = new Case(1, 1, false, "~");
 		Random r = new Random();
-		
 		int xRandom = 1 + r.nextInt(this.largeur - 1);
 		int yRandom = 1 + r.nextInt(this.largeur - 1);
-		while (! isCollisionPlacement(xRandom,yRandom)) {
+		while (isCollisionPlacement(xRandom, yRandom) || yRandom < 4) {
 			xRandom = 1 + r.nextInt(this.largeur - 1);
-			yRandom = 1 + r.nextInt(this.largeur - 1);			
+			yRandom = 1 + r.nextInt(this.largeur - 1);
 		}
-		
 		c.setPosx(xRandom);
 		c.setPosy(yRandom);
 		c.setEstTouche(false);
 		try {
 			c.setMotif(FileUtil.getInstance().getPropriete("symboleCaseVide"));
-		} catch (BatailleNavaleException e) {			
+		} catch (BatailleNavaleException e) {
 			e.printStackTrace();
 		}
 		return c;
 	}
+
 	@Deprecated
-	private boolean isCollisionPlacement(int x, int y){
+	private boolean isCollisionPlacement(int x, int y) {
 		boolean isCollision = false;
-		for(Case c : casesOccupees){
-			if (c.getPosx()==x && c.getPosy() == y) {
+		for (Case c : casesOccupees) {
+			if (c.getPosx() == x && c.getPosy() == y) {
 				isCollision = true;
-			}			
-		}	
-		return isCollision;		
+			}
+		}
+		return isCollision;
 	}
-	
-	
+
 	/**
 	 * Renvoie la liste des navires coulés
+	 * 
 	 * @return la liste
 	 */
-	public List<Navire> sontCoules(){
+	public List<Navire> sontCoules() {
 		List<Navire> coules = new ArrayList<Navire>();
-		for (Navire n : this.getListeNav()){
-			if (n.isEstCoule()){
+		for (Navire n : this.getListeNav()) {
+			if (n.isEstCoule()) {
 				coules.add(n);
 			}
 		}
 		return coules;
 	}
-	
-	
-	
+
 	/**
-	 * Permet de jouer effectivement le coup aux coordonnées choisies
-	 * 1. le coup a-t-il été joué avant ?
-	 * 2. parcours de tous les navires du joueur pour trouver si la case correspond à une case occupée
-	 * 3. modification des états et tableaux : touché, coulé, case jouée
+	 * Permet de jouer effectivement le coup aux coordonnées choisies 1. le coup
+	 * a-t-il été joué avant ? 2. parcours de tous les navires du joueur pour
+	 * trouver si la case correspond à une case occupée 3. modification des
+	 * états et tableaux : touché, coulé, case jouée
+	 * 
 	 * @param x
 	 * @param y
 	 * @return le navire touché ou null si coup dans l'eau
 	 */
-	public Navire jouerCoup(int x, int y){
-		//1 a t on déjà joué le coup
+	public Navire jouerCoup(int x, int y) {
+		// 1 a t on déjà joué le coup
 		int nbreTouche = 0;
 		Navire navireTouche = null;
 		if (!coupsJoues[x][y]) {
-		
-		//2 on demande à la liste des navires qui est touche ? si oui maj de l'état + coups joués
-			for (Navire n : this.getListeNav()){
+
+			// 2 on demande à la liste des navires qui est touche ? si oui maj
+			// de l'état + coups joués
+			for (Navire n : this.getListeNav()) {
 				nbreTouche = 0;
 				List<Case> cases = n.getCases();
-				for(Case c : cases){
-					if (c.isEstTouche()) nbreTouche++;
-					if (c.getPosx()== x && c.getPosy() == y) {
+				for (Case c : cases) {
+					if (c.isEstTouche())
+						nbreTouche++;
+					if (c.getPosx() == x && c.getPosy() == y) {
 						c.setEstTouche(true);
 						nbreTouche++;
 						navireTouche = n;
-						casesTouchees[x][y]=true;
+						casesTouchees[x][y] = true;
 					}
 				}
 				if (nbreTouche == cases.size()) {
 					n.setEstCoule(true);
 				}
-				
-			} 
-			coupsJoues[x][y]= true;
-			
+
+			}
+			coupsJoues[x][y] = true;
+
 		}
 		return navireTouche;
 	}
 
 	public List<Navire> getListeNav() {
-		return listeNav;
+		return this.listeNav;
 	}
 
 	public void setListeNav(List<Navire> listeNav) {
 		this.listeNav = listeNav;
-		//this.randomiserPlacement(listeNav);
+		// this.randomiserPlacement(listeNav);
 	}
 
 	public List<Case> getCasesOccupees() {
-		return casesOccupees;
+		return this.casesOccupees;
 	}
 
 	public void setCasesOccupees(List<Case> casesOccupees) {
@@ -235,14 +246,15 @@ public class Plateau {
 	}
 
 	public int getLongueur() {
-		return longueur;
+		return this.longueur;
 	}
 
 	public int getLargeur() {
-		return largeur;
+		return this.largeur;
 	}
+
 	public String getJoueur() {
-		return joueur;
+		return this.joueur;
 	}
 
 	public void setJoueur(String joueur) {
@@ -250,7 +262,7 @@ public class Plateau {
 	}
 
 	public boolean[][] getCoupsJoues() {
-		return coupsJoues;
+		return this.coupsJoues;
 	}
 
 	public void setCoupsJoues(boolean[][] coupsJoues) {
@@ -264,5 +276,13 @@ public class Plateau {
 	public boolean[][] getCasesTouchees() {
 		return casesTouchees;
 	}
-	
+
+	public void actualisationCases() {
+		for (Case case11 : casesOccupees) {
+			if (case11.isEstTouche()) {
+				this.lstCases[case11.getPosx()][case11.getPosy()]
+						.setEstTouche(true);
+			}
+		}
+	}
 }
