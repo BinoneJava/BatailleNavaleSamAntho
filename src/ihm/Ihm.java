@@ -23,7 +23,8 @@ public class Ihm extends JFrame {
 		jmenu = new JMenu("kokokok");
 		tabJPanels = new JPanel[5];
 		tabJPanels[0] = new Accueil(this);
-		tabJPanels[1] = new JpJeu(this);
+		tabJPanels[1] = new JPJoueur(this);
+		tabJPanels[2] = new JpJeu(this);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(new Dimension(700,700));
 		//this.setResizable(false);
@@ -32,8 +33,8 @@ public class Ihm extends JFrame {
 		this.setVisible(true);
 	}
 
-	/**
-	 * Méthode pour Changer le panel courant affiché?
+	/**s
+	 * Méthode pour Changer le panel courant affiché
 	 * 
 	 * @param num
 	 *            le numéro du panel.
@@ -42,6 +43,9 @@ public class Ihm extends JFrame {
 		this.setContentPane(this.tabJPanels[num]);
 		this.repaint();
 		this.revalidate();
+	}
+	public JPanel[] getTabPanel(){
+		return this.tabJPanels;
 	}
 
 }
