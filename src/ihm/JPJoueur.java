@@ -44,7 +44,7 @@ public class JpJoueur extends JPanel {
 		JComboBox<String> choixDif = new JComboBox<String>();
 		choixDif.addItem("Facil");
 		choixDif.addItem("Difficil");
-		jtNom = new JTextField("");
+		jtNom = new JTextField("                       ");
 		jbValider = new JButton("Valider");
 		panelCentre = new JPanel(new GridBagLayout());
 		this.add(panelCentre, BorderLayout.CENTER);
@@ -52,6 +52,7 @@ public class JpJoueur extends JPanel {
 		c.gridy = 1;
 		panelCentre.add(new JLabel("Votre nom "),c);
 		c.gridx = 2;
+		c.gridwidth = 3;
 		panelCentre.add(jtNom,c);
 		c.gridx = 1;
 		c.gridy = 2;
