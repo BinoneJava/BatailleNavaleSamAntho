@@ -4,21 +4,16 @@
 package ihm;
 
 import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import com.sun.xml.internal.ws.api.config.management.policy.ManagementAssertion.Setting;
 
 /**
  * Classe intérmédiaire qui permet de récupérer 

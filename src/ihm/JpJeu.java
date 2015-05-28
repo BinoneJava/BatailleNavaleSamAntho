@@ -1,10 +1,13 @@
 package ihm;
 
 import java.awt.BorderLayout;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,8 +32,10 @@ public class JpJeu extends JPanel {
 	private JButton b2;
 	private Jeu jeu;
 	private String nom;
+	
 
 	public JpJeu(Ihm z) {
+		
 		this.setLayout(new BorderLayout());
 		JPanel centreLayout = new JPanel(new GridLayout(0, 2));
 		this.grille = new JpPlateau();
@@ -48,21 +53,18 @@ public class JpJeu extends JPanel {
 		this.add(new JLabel(nom), BorderLayout.WEST);
 		this.add(new JLabel("Ordinateur"), BorderLayout.EAST);
 		menu.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				z.changerPage(0);
 			}
 		});
 		b2.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
 			}
 		});
 	}
-
 	public Jeu getJeu() {
 		return jeu;
 	}
