@@ -29,11 +29,8 @@ public class JpJeu extends JPanel {
 	private JButton b2;
 	private Jeu jeu;
 	private String nom;
-	private JPJoueur joueur;
 
 	public JpJeu(Ihm z) {
-		this.joueur = (JPJoueur) z.getTabPanel()[1];
-		this.nom = this.joueur.getNom();
 		this.setLayout(new BorderLayout());
 		JPanel centreLayout = new JPanel(new GridLayout(0, 2));
 		this.grille = new JpPlateau();

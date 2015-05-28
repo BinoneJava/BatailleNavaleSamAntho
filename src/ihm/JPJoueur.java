@@ -25,7 +25,7 @@ import com.sun.xml.internal.ws.api.config.management.policy.ManagementAssertion.
  * @author Samuel
  *
  */
-public class JPJoueur extends JPanel {
+public class JpJoueur extends JPanel {
 
 	/**
 	 * 
@@ -40,7 +40,7 @@ public class JPJoueur extends JPanel {
 	/**
 	 * Contructeur du panel JPJoeur, où on demande le nom d'utilisateur et la difficulté
 	 */
-	public JPJoueur(Ihm mapage) {
+	public JpJoueur(Ihm mapage) {
 		this.setLayout(new BorderLayout());
 		c = new GridBagConstraints();
 		ancetre = mapage;
@@ -60,6 +60,7 @@ public class JPJoueur extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				nom = (String) choixDif.getSelectedItem();
+				ancetre.setNom(nom);
 				ancetre.changerPage(2);
 			}
 		});
