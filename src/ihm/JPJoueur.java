@@ -5,6 +5,7 @@ package ihm;
 
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,17 +40,27 @@ public class JpJoueur extends JPanel {
 		this.setLayout(new BorderLayout());
 		c = new GridBagConstraints();
 		ancetre = mapage;
+		panelCentre = new JPanel();
 		JComboBox<String> choixDif = new JComboBox<String>();
 		choixDif.addItem("Facil");
 		choixDif.addItem("Difficil");
-		jtNom = new JTextField("Votre nom");
+		jtNom = new JTextField("");
 		jbValider = new JButton("Valider");
-		panelCentre = new JPanel(new GridLayout(2,2));
+		panelCentre = new JPanel(new GridBagLayout());
 		this.add(panelCentre, BorderLayout.CENTER);
-		panelCentre.add(jtNom);
+		c.gridx = 1;
+		c.gridy = 1;
+		panelCentre.add(new JLabel("Votre nom "),c);
+		c.gridx = 2;
+		panelCentre.add(jtNom,c);
+		c.gridx = 1;
+		c.gridy = 2;
 		panelCentre.add(new JLabel("Difficulté :"), c);
-		panelCentre.add(choixDif);
-		panelCentre.add(jbValider);
+		c.gridx = 2;
+		panelCentre.add(choixDif,c);
+		c.gridy = 3;
+		c.gridx = 1;
+		panelCentre.add(jbValider,c);
 		jbValider.addActionListener(new ActionListener() {
 			
 			@Override
