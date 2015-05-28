@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_uwuOAP_OEeSTPrO4uAC4BQ">
+  <modelElement href="BatailleNavale.uml#_uk9C4v_OEeSTPrO4uAC4BQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_wljBoP_OEeSTPrO4uAC4BQ" sourceAnchor="148.0,0.0" targetAnchor="0.0,78.0" target="_wlsyq__OEeSTPrO4uAC4BQ" source="_wlsyq__OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_uqK6Fv_OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wlsy0f_OEeSTPrO4uAC4BQ" position="90.0,90.0"/>
+    <bendpoints xmi:id="_wsZ3kP_OEeSTPrO4uAC4BQ" sourceY="-91" targetX="148" targetY="-169"/>
+    <bendpoints xmi:id="_wsZ3kf_OEeSTPrO4uAC4BQ" sourceX="-234" sourceY="-91" targetX="-86" targetY="-169"/>
+    <bendpoints xmi:id="_wsZ3kv_OEeSTPrO4uAC4BQ" sourceX="-234" sourceY="78" targetX="-86"/>
+    <stereotypes xmi:id="_wljBpP_OEeSTPrO4uAC4BQ" name="Reference">
+      <modelElement href="BatailleNavale.uml#_uqK6GP_OEeSTPrO4uAC4BQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_wljBof_OEeSTPrO4uAC4BQ" text="">
+      <visualProperties xmi:id="_wsZ3lP_OEeSTPrO4uAC4BQ" position="174.0,-8.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_wljBov_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="">
+      <modelElement href="BatailleNavale.uml#_uqK6F__OEeSTPrO4uAC4BQ"/>
+      <visualProperties xmi:id="_wsZ3k__OEeSTPrO4uAC4BQ" position="-20.5,-50.0"/>
+      <visibility xmi:id="_wljBpv_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wljBpf_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_wljBo__OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="cp" navigable="true">
+      <modelElement href="BatailleNavale.uml#_upuONP_OEeSTPrO4uAC4BQ"/>
+      <visualProperties xmi:id="_wsZ3lf_OEeSTPrO4uAC4BQ" position="-33.00000000000003,3.499999999999943"/>
+      <visibility xmi:id="_wlsyoP_OEeSTPrO4uAC4BQ" label="-"/>
+      <cardinality xmi:id="_wljBp__OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_wlsyov_OEeSTPrO4uAC4BQ" source="_wlsyq__OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_uqK6E__OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wlsy0P_OEeSTPrO4uAC4BQ" position="70.0,70.0"/>
+    <stereotypes xmi:id="_wlsyo__OEeSTPrO4uAC4BQ" name="Reference">
+      <modelElement href="BatailleNavale.uml#_uqK6Ff_OEeSTPrO4uAC4BQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_wlsypP_OEeSTPrO4uAC4BQ" text=""/>
+    <sourceRole xmi:id="_wlsypf_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="">
+      <modelElement href="BatailleNavale.uml#_uqK6FP_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wlsypv_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wlsyp__OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_wlsyqP_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="tableProprietes" navigable="true">
+      <modelElement href="BatailleNavale.uml#_upuOLf_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wlsyqf_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wlsyqv_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_wlsyq__OEeSTPrO4uAC4BQ" name="FileUtil" associationsIn="_wljBoP_OEeSTPrO4uAC4BQ" associationsOut="_wljBoP_OEeSTPrO4uAC4BQ _wlsyov_OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_ummBoP_OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wlsyrP_OEeSTPrO4uAC4BQ" position="50.0,50.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_wlsyrf_OEeSTPrO4uAC4BQ" label="+"/>
+    <attributes xmi:id="_wlsyrv_OEeSTPrO4uAC4BQ" defaultValue="new Properties()" name="tableProprietes" staticAttribute="true">
+      <modelElement href="BatailleNavale.uml#_upuOLf_OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_wlsyr__OEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upuOLv_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wlsysP_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wlsysf_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+      <type xmi:id="_wlsysv_OEeSTPrO4uAC4BQ" name="Properties">
+        <modelElement href="BatailleNavale.uml#_uo-nRv_OEeSTPrO4uAC4BQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_wlsys__OEeSTPrO4uAC4BQ" defaultValue="null" name="cp" staticAttribute="true">
+      <modelElement href="BatailleNavale.uml#_upuONP_OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_wlsytP_OEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upuONv_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wlsytf_OEeSTPrO4uAC4BQ" label="-"/>
+      <cardinality xmi:id="_wlsytv_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+      <type xmi:id="_wlsyt__OEeSTPrO4uAC4BQ" name="FileUtil">
+        <modelElement href="BatailleNavale.uml#_ummBoP_OEeSTPrO4uAC4BQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_wlsyuP_OEeSTPrO4uAC4BQ" defaultValue="&quot;scenario.txt&quot;" name="fileName" staticAttribute="true">
+      <modelElement href="BatailleNavale.uml#_upuON__OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_wlsyuf_OEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upuOOP_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wlsyuv_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wlsyu__OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+      <type xmi:id="_wlsyvP_OEeSTPrO4uAC4BQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_wlsyvf_OEeSTPrO4uAC4BQ" name="loadProp" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_ummBof_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wlsyvv_OEeSTPrO4uAC4BQ" label="-"/>
+    </operations>
+    <operations xmi:id="_wlsyv__OEeSTPrO4uAC4BQ" name="FileUtil">
+      <modelElement href="BatailleNavale.uml#_ummBov_OEeSTPrO4uAC4BQ"/>
+      <keywords xmi:id="_wlsywP_OEeSTPrO4uAC4BQ" keyword="create"/>
+      <visibility xmi:id="_wlsywf_OEeSTPrO4uAC4BQ" label="-"/>
+      <outParameters xmi:id="_wlsywv_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_ummBpf_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wlsyw__OEeSTPrO4uAC4BQ" name="FileUtil">
+          <modelElement href="BatailleNavale.uml#_ummBoP_OEeSTPrO4uAC4BQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_wlsyxP_OEeSTPrO4uAC4BQ" name="getPropriete">
+      <modelElement href="BatailleNavale.uml#_ummBpv_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wlsyxf_OEeSTPrO4uAC4BQ" label="+"/>
+      <outParameters xmi:id="_wlsyxv_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_ummBqP_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wlsyx__OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_wlsyyP_OEeSTPrO4uAC4BQ" name="p">
+        <modelElement href="BatailleNavale.uml#_ummBp__OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wlsyyf_OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_wlsyyv_OEeSTPrO4uAC4BQ" name="getInstance" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_ummBqf_OEeSTPrO4uAC4BQ"/>
+      <keywords xmi:id="_wlsyy__OEeSTPrO4uAC4BQ" keyword="synchronized"/>
+      <stereotypes xmi:id="_wlsyzP_OEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_ummBrP_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wlsyzf_OEeSTPrO4uAC4BQ" label="+"/>
+      <outParameters xmi:id="_wlsyzv_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_uo-nSP_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wlsyz__OEeSTPrO4uAC4BQ" name="FileUtil">
+          <modelElement href="BatailleNavale.uml#_ummBoP_OEeSTPrO4uAC4BQ"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

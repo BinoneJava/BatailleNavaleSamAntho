@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_uwlEEP_OEeSTPrO4uAC4BQ">
+  <modelElement href="BatailleNavale.uml#_ukzR5P_OEeSTPrO4uAC4BQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_wU26X__OEeSTPrO4uAC4BQ" targetItem="_wU26e__OEeSTPrO4uAC4BQ" sourceItem="_wU26Xv_OEeSTPrO4uAC4BQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_wU26YP_OEeSTPrO4uAC4BQ" source="_wU26e__OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_uqBJKP_OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wU26pv_OEeSTPrO4uAC4BQ" position="110.0,110.0"/>
+    <stereotypes xmi:id="_wU26Yf_OEeSTPrO4uAC4BQ" name="Reference">
+      <modelElement href="BatailleNavale.uml#_uqBJKv_OEeSTPrO4uAC4BQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_wU26Yv_OEeSTPrO4uAC4BQ" text=""/>
+    <sourceRole xmi:id="_wU26Y__OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="">
+      <modelElement href="BatailleNavale.uml#_uqBJKf_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26ZP_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wU26Zf_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_wU26Zv_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="j" navigable="true">
+      <modelElement href="BatailleNavale.uml#_upkdOP_OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_f9_f4P_WEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upkdOv_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wU26Z__OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26aP_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_wU26af_OEeSTPrO4uAC4BQ" source="_wU26e__OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_uqBJK__OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wU26p__OEeSTPrO4uAC4BQ" position="130.0,130.0"/>
+    <stereotypes xmi:id="_wU26av_OEeSTPrO4uAC4BQ" name="Reference">
+      <modelElement href="BatailleNavale.uml#_uqBJLf_OEeSTPrO4uAC4BQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_wU26a__OEeSTPrO4uAC4BQ" text=""/>
+    <sourceRole xmi:id="_wU26bP_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="">
+      <modelElement href="BatailleNavale.uml#_uqBJLP_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26bf_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wU26bv_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_wU26b__OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="pJoueur" navigable="true">
+      <modelElement href="BatailleNavale.uml#_upkdO__OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_f9_f4f_WEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upkdPP_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wU26cP_OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26cf_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_wU26cv_OEeSTPrO4uAC4BQ" source="_wU26e__OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_uqBJLv_OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wU26qP_OEeSTPrO4uAC4BQ" position="150.0,150.0"/>
+    <stereotypes xmi:id="_wU26c__OEeSTPrO4uAC4BQ" name="Reference">
+      <modelElement href="BatailleNavale.uml#_uqBJMP_OEeSTPrO4uAC4BQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_wU26dP_OEeSTPrO4uAC4BQ" text=""/>
+    <sourceRole xmi:id="_wU26df_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="">
+      <modelElement href="BatailleNavale.uml#_uqBJL__OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26dv_OEeSTPrO4uAC4BQ" label="+"/>
+      <cardinality xmi:id="_wU26d__OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_wU26eP_OEeSTPrO4uAC4BQ" aggregationKind="NONE" name="pOrdinateur" navigable="true">
+      <modelElement href="BatailleNavale.uml#_upkdPf_OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_f9_f4v_WEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upkdPv_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wU26ef_OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26ev_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_wU26Xv_OEeSTPrO4uAC4BQ" sourceConnectionVisual="_wU26X__OEeSTPrO4uAC4BQ" text="@author V902458&#xD;&#xA; *" item="_wU26e__OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_uqBJG__OEeSTPrO4uAC4BQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_wU26e__OEeSTPrO4uAC4BQ" comments="_wU26Xv_OEeSTPrO4uAC4BQ" targetConnectionVisual="_wU26X__OEeSTPrO4uAC4BQ" name="TestJeu" associationsOut="_wU26YP_OEeSTPrO4uAC4BQ _wU26af_OEeSTPrO4uAC4BQ _wU26cv_OEeSTPrO4uAC4BQ">
+    <modelElement href="BatailleNavale.uml#_ul_ky__OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wU26fP_OEeSTPrO4uAC4BQ" position="439.0,61.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_wU26ff_OEeSTPrO4uAC4BQ" label="+"/>
+    <attributes xmi:id="_wU26fv_OEeSTPrO4uAC4BQ" defaultValue="null" name="j">
+      <modelElement href="BatailleNavale.uml#_upkdOP_OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_f-CjMP_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_f-CjMf_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_f-Fmg__WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <visibility xmi:id="_wU26gP_OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26gf_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+      <type xmi:id="_wU26gv_OEeSTPrO4uAC4BQ" name="Jeu">
+        <modelElement href="BatailleNavale.uml#_umcQo__OEeSTPrO4uAC4BQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_wU26g__OEeSTPrO4uAC4BQ" name="pJoueur">
+      <modelElement href="BatailleNavale.uml#_upkdO__OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_f-CjMv_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_f-FmgP_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_f-FmhP_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <visibility xmi:id="_wU26hf_OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26hv_OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+      <type xmi:id="_wU26h__OEeSTPrO4uAC4BQ" name="Plateau">
+        <modelElement href="BatailleNavale.uml#_umJVtv_OEeSTPrO4uAC4BQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_wU26iP_OEeSTPrO4uAC4BQ" name="pOrdinateur">
+      <modelElement href="BatailleNavale.uml#_upkdPf_OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_f-Fmgf_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_f-Fmgv_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_f-Fmhf_WEeSTPrO4uAC4BQ" name="LegacyStyledElement"/>
+      <visibility xmi:id="_wU26iv_OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26i__OEeSTPrO4uAC4BQ" label="1" max="1" min="1"/>
+      <type xmi:id="_wU26jP_OEeSTPrO4uAC4BQ" name="Plateau">
+        <modelElement href="BatailleNavale.uml#_umJVtv_OEeSTPrO4uAC4BQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_wU26jf_OEeSTPrO4uAC4BQ" name="TestJeu">
+      <modelElement href="BatailleNavale.uml#_ul_kzP_OEeSTPrO4uAC4BQ"/>
+      <keywords xmi:id="_wU26jv_OEeSTPrO4uAC4BQ" keyword="create"/>
+      <visibility xmi:id="_wU26j__OEeSTPrO4uAC4BQ" label="+"/>
+      <outParameters xmi:id="_wU26kP_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_ul_k0f_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26kf_OEeSTPrO4uAC4BQ" name="TestJeu">
+          <modelElement href="BatailleNavale.uml#_ul_ky__OEeSTPrO4uAC4BQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_wU26kv_OEeSTPrO4uAC4BQ" name="x">
+        <modelElement href="BatailleNavale.uml#_ul_kzf_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26k__OEeSTPrO4uAC4BQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_wU26lP_OEeSTPrO4uAC4BQ" name="y">
+        <modelElement href="BatailleNavale.uml#_ul_kzv_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26lf_OEeSTPrO4uAC4BQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_wU26lv_OEeSTPrO4uAC4BQ" name="convertStringToNavire" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_ul_k0v_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26l__OEeSTPrO4uAC4BQ" label="-"/>
+      <outParameters xmi:id="_wU26mP_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_uorsav_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26mf_OEeSTPrO4uAC4BQ" name="Navire">
+          <modelElement href="BatailleNavale.uml#_umTGvf_OEeSTPrO4uAC4BQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_wU26mv_OEeSTPrO4uAC4BQ" name="infos">
+        <modelElement href="BatailleNavale.uml#_ul_k0__OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26m__OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_wU26nP_OEeSTPrO4uAC4BQ" name="caseTypeNavire" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_umJVsP_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26nf_OEeSTPrO4uAC4BQ" label="-"/>
+      <outParameters xmi:id="_wU26nv_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_umJVsv_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26n__OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_wU26oP_OEeSTPrO4uAC4BQ" name="longueur">
+        <modelElement href="BatailleNavale.uml#_umJVsf_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26of_OEeSTPrO4uAC4BQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_wU26ov_OEeSTPrO4uAC4BQ" name="main" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_umJVs__OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26o__OEeSTPrO4uAC4BQ" label="+"/>
+      <parameters xmi:id="_wU26pP_OEeSTPrO4uAC4BQ" name="args">
+        <modelElement href="BatailleNavale.uml#_umJVtP_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26pf_OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_wUtwUP_OEeSTPrO4uAC4BQ" name="testIhm">
+    <modelElement href="BatailleNavale.uml#_ul2ayf_OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wUtwUf_OEeSTPrO4uAC4BQ" position="214.0,16.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_wUtwUv_OEeSTPrO4uAC4BQ" label="+"/>
+    <operations xmi:id="_wUtwU__OEeSTPrO4uAC4BQ" name="main" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_ul2ayv_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wUtwVP_OEeSTPrO4uAC4BQ" label="+"/>
+      <parameters xmi:id="_wUtwVf_OEeSTPrO4uAC4BQ" name="args">
+        <modelElement href="BatailleNavale.uml#_ul2ay__OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wUtwVv_OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_wU26QP_OEeSTPrO4uAC4BQ" name="TestPlacement">
+    <modelElement href="BatailleNavale.uml#_ul_kvf_OEeSTPrO4uAC4BQ"/>
+    <visualProperties xmi:id="_wU26Qf_OEeSTPrO4uAC4BQ" position="-180.0,148.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_wU26Qv_OEeSTPrO4uAC4BQ" label="+"/>
+    <attributes xmi:id="_wU26Q__OEeSTPrO4uAC4BQ" defaultValue="new String[8][8]" name="lstCases">
+      <modelElement href="BatailleNavale.uml#_upkdM__OEeSTPrO4uAC4BQ"/>
+      <stereotypes xmi:id="_wU26RP_OEeSTPrO4uAC4BQ" name="Array">
+        <modelElement href="BatailleNavale.uml#_upkdNf_OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_wU26Rf_OEeSTPrO4uAC4BQ" name="LegacyStyledElement">
+        <modelElement href="BatailleNavale.uml#_upkdN__OEeSTPrO4uAC4BQ"/>
+      </stereotypes>
+      <visibility xmi:id="_wU26Rv_OEeSTPrO4uAC4BQ" label="~"/>
+      <cardinality xmi:id="_wU26R__OEeSTPrO4uAC4BQ" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_wU26SP_OEeSTPrO4uAC4BQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_wU26Sf_OEeSTPrO4uAC4BQ" name="TestPlacement">
+      <modelElement href="BatailleNavale.uml#_ul_kvv_OEeSTPrO4uAC4BQ"/>
+      <keywords xmi:id="_wU26Sv_OEeSTPrO4uAC4BQ" keyword="create"/>
+      <visibility xmi:id="_wU26S__OEeSTPrO4uAC4BQ" label="+"/>
+      <outParameters xmi:id="_wU26TP_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_ul_kwf_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26Tf_OEeSTPrO4uAC4BQ" name="TestPlacement">
+          <modelElement href="BatailleNavale.uml#_ul_kvf_OEeSTPrO4uAC4BQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_wU26Tv_OEeSTPrO4uAC4BQ" name="isCaseOccupee">
+      <modelElement href="BatailleNavale.uml#_ul_kwv_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26T__OEeSTPrO4uAC4BQ" label="-"/>
+      <outParameters xmi:id="_wU26UP_OEeSTPrO4uAC4BQ">
+        <modelElement href="BatailleNavale.uml#_ul_kxf_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26Uf_OEeSTPrO4uAC4BQ" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_wU26Uv_OEeSTPrO4uAC4BQ" name="x">
+        <modelElement href="BatailleNavale.uml#_ul_kw__OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26U__OEeSTPrO4uAC4BQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_wU26VP_OEeSTPrO4uAC4BQ" name="y">
+        <modelElement href="BatailleNavale.uml#_ul_kxP_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26Vf_OEeSTPrO4uAC4BQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_wU26Vv_OEeSTPrO4uAC4BQ" name="generer">
+      <modelElement href="BatailleNavale.uml#_ul_kxv_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26V__OEeSTPrO4uAC4BQ" label="-"/>
+    </operations>
+    <operations xmi:id="_wU26WP_OEeSTPrO4uAC4BQ" name="afficher">
+      <modelElement href="BatailleNavale.uml#_ul_kx__OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26Wf_OEeSTPrO4uAC4BQ" label="-"/>
+    </operations>
+    <operations xmi:id="_wU26Wv_OEeSTPrO4uAC4BQ" name="main" staticOperation="true">
+      <modelElement href="BatailleNavale.uml#_ul_kyP_OEeSTPrO4uAC4BQ"/>
+      <visibility xmi:id="_wU26W__OEeSTPrO4uAC4BQ" label="+"/>
+      <parameters xmi:id="_wU26XP_OEeSTPrO4uAC4BQ" name="args">
+        <modelElement href="BatailleNavale.uml#_ul_kyf_OEeSTPrO4uAC4BQ"/>
+        <type xmi:id="_wU26Xf_OEeSTPrO4uAC4BQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
