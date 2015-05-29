@@ -103,7 +103,6 @@ public class Jeu  {
 	
 	@Deprecated
 	public void genererJeu(){
-		int nbreNavires = 6;
 		int nbreNavires1CASE = 0;
 		int nbreNavires2CASE = 1;
 		int nbreNavires3CASE = 2;
@@ -114,7 +113,6 @@ public class Jeu  {
 		Navire n = null;
 		List<Case> lst =null;
 		List<Navire> listeNav = new ArrayList<Navire>();
-		for (int i=0; i< nbreNavires; i++){
 			for (cpt =0; cpt <nbreNavires1CASE; cpt++){
 				idNavire++;
 				n = new Navire(idNavire,1,lst,false,100);
@@ -139,8 +137,6 @@ public class Jeu  {
 				idNavire++;
 				n = new Navire(idNavire,5,lst,false,500);
 				listeNav.add(n);
-			}
-			
 		}	
 		plateauJoueurUn.setListeNav(listeNav);
 		plateauJoueurDeux.setListeNav(listeNav);	

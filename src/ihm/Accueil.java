@@ -74,7 +74,5 @@ public class Accueil extends JPanel {
 
 	public void paint(Graphics g) {
 		g.drawImage(bg, 0, 0, null);
-		fenetre.repaint();
-		fenetre.revalidate();
 	}
 }

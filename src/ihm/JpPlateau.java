@@ -39,10 +39,11 @@ public class JpPlateau extends JPanel {
 		this.actionBouton = new ActionBoutonGrille();
 		this.grille = new JButton[10][10];
 		this.fenetre = fenetre;
-		this.lsNavires =  fenetre.getJeu().getPlateauId(id).getListeNav();
+		this.lsNavires = fenetre.getJeu().getPlateauId(id).getListeNav();
 		this.plateau = fenetre.getJeu().getPlateauId(id);
 	}
-	public JButton[][] getGrille(){
+
+	public JButton[][] getGrille() {
 		return this.grille;
 	}
 
@@ -88,64 +89,38 @@ public class JpPlateau extends JPanel {
 			choixPos.addItem("Vers l'Est");
 			center.add(choixPos);
 			int aPlacer = lsNavires.size() - nbrNav;
-			center.add(new JLabel("Vous êtez entrain de poser un bateau de " + lsNavires.get(nbrNav).getTaille()+" cases"));
-			center.add(new JLabel("Il vous reste" + (aPlacer) + "bateaux a placer"));
+			center.add(new JLabel("Vous êtez entrain de poser un bateau de "
+					+ lsNavires.get(nbrNav).getTaille() + " cases"));
+			center.add(new JLabel("Il vous reste" + (aPlacer)
+					+ "bateaux a placer"));
 			JButton val = new JButton("valider");
 			choix.add(val, BorderLayout.SOUTH);
 			choix.setVisible(true);
+			System.out.println(nbrNav);
 			val.addActionListener(new ActionListener() {
-
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					/*if (choixPos.getSelectedIndex() == 0 && nbrNav!=5) {
-						for (int i = 0; i < 10; i++) {
-							for (int j = 0; j < 10; j++) {
-								if (this.grille[i][j] == source) {
-									for (int k = 0; k < 5; k++) {
-										this.grille[i - k][j].setText("X");
-									}
-								}
-							}
-						}
-						nbrNav++;
-					}
-					if (choixPos.getSelectedIndex() == 1&&nbrNav!=5) {
-						for (int i = 0; i < 10; i++) {
-							for (int j = 0; j < 10; j++) {
-								if (this.grille[i][j] == source) {
-									for (int k = 0; k < 5; k++) {
-										this.grille[i + k][j].setText("X");
-									}
-								}
-							}
-						}
-						nbrNav++;
-					}
-					if (choixPos.getSelectedIndex() == 2&&nbrNav!=5) {
-						for (int i = 0; i < 10; i++) {
-							for (int j = 0; j < 10; j++) {
-								if (this.grille[i][j] == source) {
-									for (int k = 0; k < 5; k++) {
-										this.grille[i][j-k].setText("X");
-									}
-								}
-							}
-						}
-						nbrNav++;
-					}
-					if (choixPos.getSelectedIndex() == 3&&nbrNav!=5) {
-						for (int i = 0; i < 10; i++) {
-							for (int j = 0; j < 10; j++) {
-								if (this.grille[i][j] == source) {
-									for (int k = 0; k < 5; k++) {
-										this.grille[i][j+k].setText("X");
-									}
-								}
-							}
-						}
-						nbrNav++;
-					}*/
+					/*
+					 * if (choixPos.getSelectedIndex() == 0 && nbrNav!=5) { for
+					 * (int i = 0; i < 10; i++) { for (int j = 0; j < 10; j++) {
+					 * if (this.grille[i][j] == source) { for (int k = 0; k < 5;
+					 * k++) { this.grille[i - k][j].setText("X"); } } } }
+					 * nbrNav++; } if (choixPos.getSelectedIndex() ==
+					 * 1&&nbrNav!=5) { for (int i = 0; i < 10; i++) { for (int j
+					 * = 0; j < 10; j++) { if (this.grille[i][j] == source) {
+					 * for (int k = 0; k < 5; k++) { this.grille[i +
+					 * k][j].setText("X"); } } } } nbrNav++; } if
+					 * (choixPos.getSelectedIndex() == 2&&nbrNav!=5) { for (int
+					 * i = 0; i < 10; i++) { for (int j = 0; j < 10; j++) { if
+					 * (this.grille[i][j] == source) { for (int k = 0; k < 5;
+					 * k++) { this.grille[i][j-k].setText("X"); } } } }
+					 * nbrNav++; } if (choixPos.getSelectedIndex() ==
+					 * 3&&nbrNav!=5) { for (int i = 0; i < 10; i++) { for (int j
+					 * = 0; j < 10; j++) { if (this.grille[i][j] == source) {
+					 * for (int k = 0; k < 5; k++) {
+					 * this.grille[i][j+k].setText("X"); } } } } nbrNav++; }
+					 */
 					ajouterNavire(fenetre.getJeu().getPlateauId(id)
 							.getListeNav().get(nbrNav),
 							choixPos.getSelectedIndex(),
@@ -153,6 +128,7 @@ public class JpPlateau extends JPanel {
 
 					choix.setVisible(false);
 					nbrNav++;
+					System.out.println(nbrNav);
 				}
 			});
 		}
@@ -161,14 +137,9 @@ public class JpPlateau extends JPanel {
 	public void actualiserGrille() {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				if (plateau.lstCases[i][j]
-						.isEstTouche()
-						&& fenetre
-								.getJeu()
-								.getPlateauId(id)
-								.getCasesOccupees()
-								.contains(
-										plateau.lstCases[i][j])) {
+				if (plateau.lstCases[i][j].isEstTouche()
+						&& fenetre.getJeu().getPlateauId(id).getCasesOccupees()
+								.contains(plateau.lstCases[i][j])) {
 					grille[i][j].setBackground(Color.RED);
 				} else {
 					grille[i][j].setBackground(Color.GRAY);
@@ -202,6 +173,12 @@ public class JpPlateau extends JPanel {
 		fenetre.getJeu().getPlateauId(id).getListeNav().add(n);
 		for (Case c : n.getCases()) {
 			fenetre.getJeu().getPlateauId(id).getCasesOccupees().add(c);
+		}
+	}
+
+	public void placerBateaux() {
+		while (lsNavires.size() - nbrNav > 0) {
+			
 		}
 	}
 }

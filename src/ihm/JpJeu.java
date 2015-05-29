@@ -69,7 +69,6 @@ public class JpJeu extends JPanel {
 				grille.initialisationGrille();
 				JButton source = (JButton)e.getSource();
 				source.setVisible(false);
-				jouer.setVisible(true);
 				z.repaint();
 				z.revalidate();
 				//grille.actualiserGrille();
@@ -91,5 +90,8 @@ public class JpJeu extends JPanel {
 	}
 	public void setNom(String nom){
 		this.nom = nom;
+	}
+	public void onPeutJouer(){
+		jouer.setVisible(true);
 	}
 }
