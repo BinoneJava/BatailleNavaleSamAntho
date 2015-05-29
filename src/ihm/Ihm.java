@@ -30,7 +30,7 @@ public class Ihm extends JFrame {
 		tabJPanels[0] = new Accueil(this);
 		tabJPanels[1] = new JpJoueur(this);
 		tabJPanels[2] = new JpJeu(this);
-		tabJPanels[3] = new Contact(this);
+		tabJPanels[3] = new JpContact(this);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(new Dimension(1100,700));
 		//this.setResizable(false);

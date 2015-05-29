@@ -30,6 +30,8 @@ public class JpPlateau extends JPanel {
 	ActionBoutonGrille actionBouton;
 	Ihm fenetre;
 	int nbrNav;
+	List<Navire> lsNavires;
+	Plateau plateau;
 
 	public JpPlateau(Ihm fenetre, int id) {
 		this.id = id;
@@ -38,6 +40,8 @@ public class JpPlateau extends JPanel {
 		this.grille = new JButton[10][10];
 		this.initialisationGrille();
 		this.fenetre = fenetre;
+		this.lsNavires =  fenetre.getJeu().getPlateauId(id).getListeNav();
+		this.plateau = fenetre.getJeu().getPlateauId(id);
 	}
 	public JButton[][] getGrille(){
 		return this.grille;
@@ -92,6 +96,7 @@ public class JpPlateau extends JPanel {
 			choixPos.addItem("Vers l'Ouest");
 			choixPos.addItem("Vers l'Est");
 			center.add(choixPos);
+			center.add(new JLabel("Vous êtez entrain de poser un bateau de " + lsNavires.get(nbrNav).getTaille()+" cases"), constraints);
 			JButton val = new JButton("valider");
 			choix.add(val, BorderLayout.SOUTH);
 			choix.setVisible(true);
@@ -163,14 +168,14 @@ public class JpPlateau extends JPanel {
 	public void actualiserGrille() {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				if (fenetre.getJeu().getPlateauId(id).lstCases[i][j]
+				if (plateau.lstCases[i][j]
 						.isEstTouche()
 						&& fenetre
 								.getJeu()
 								.getPlateauId(id)
 								.getCasesOccupees()
 								.contains(
-										fenetre.getJeu().getPlateauId(id).lstCases[i][j])) {
+										plateau.lstCases[i][j])) {
 					grille[i][j].setBackground(Color.RED);
 				} else {
 					grille[i][j].setBackground(Color.GRAY);
@@ -178,8 +183,7 @@ public class JpPlateau extends JPanel {
 			}
 		}
 		if (id == 0) {
-			for (Case cassee : fenetre.getJeu().getPlateauId(id)
-					.getCasesOccupees()) {
+			for (Case cassee : plateau.getCasesOccupees()) {
 				this.grille[cassee.getPosx()][cassee.getPosy()]
 						.setBackground(Color.BLACK);
 			}

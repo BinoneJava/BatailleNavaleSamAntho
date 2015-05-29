@@ -15,13 +15,13 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Contact extends JPanel {
+public class JpContact extends JPanel {
 
 	private JPanel center;
 	private GridBagConstraints c;
 	private JButton val;
 	private JButton retour;
-	public Contact(Ihm fenetre) {
+	public JpContact(Ihm fenetre) {
 		this.setLayout(new BorderLayout());
 		retour = new JButton("Retour");
 		center = new JPanel(new GridBagLayout());
@@ -43,7 +43,7 @@ public class Contact extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				switch (jcbox.getSelectedIndex()) {
 				case 0:
-					URI uri = URI.create("sabbaye.noip.me/Contact.html");
+					URI uri = URI.create("http://sabbaye.noip.me/formulaire.html");
 					try {
 						Desktop.getDesktop().browse(uri);
 					} catch (IOException e1) {
