@@ -25,7 +25,6 @@ public class Accueil extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JButton jbJouer;
-	private JButton jbCJ;
 	private JButton jbContact;
 	private JButton jbQuitter;
 	private Image bg;
@@ -33,7 +32,6 @@ public class Accueil extends JPanel {
 	public Accueil(Ihm e) {
 		bg = new ImageIcon("Images\\backAc.jpg").getImage();
 
-		jbCJ = new JButton("Comment Jouer ? ");
 		jbJouer = new JButton("Jouer");
 		jbContact = new JButton("Contact");
 		jbQuitter = new JButton("Quitter");
@@ -44,8 +42,7 @@ public class Accueil extends JPanel {
 		this.add(jbJouer, c);
 		c.gridy = 2;
 		this.add(jbContact, c);
-		c.gridy = 3;
-		this.add(jbCJ, c);
+
 		c.gridy = 4;
 		this.add(jbQuitter, c);
 
@@ -54,6 +51,20 @@ public class Accueil extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				e.changerPage(1);
+			}
+		});
+		jbContact.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent y) {
+				e.changerPage(3);
+				
+			}
+		});
+		jbQuitter.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent r) {
 			}
 		});
 
