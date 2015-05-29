@@ -30,7 +30,6 @@ public class JpJeu extends JPanel {
 	private JpPlateau grille2;
 	private JButton menu = new JButton("Menu ! ");
 	private JButton b2;
-	private Jeu jeu;
 	private String nom;
 	
 
@@ -40,9 +39,8 @@ public class JpJeu extends JPanel {
 		JPanel nord = new JPanel(new GridLayout(0,3));
 		this.add(nord, BorderLayout.NORTH);
 		JPanel centreLayout = new JPanel(new GridLayout(0, 2));
-		this.grille = new JpPlateau();
-		this.grille2 = new JpPlateau();
-		this.jeu = new Jeu(10, 10, nom);
+		this.grille = new JpPlateau(z);
+		this.grille2 = new JpPlateau(z);
 		b2 = new JButton("Placez les bateaux !");
 		this.add(centreLayout, BorderLayout.CENTER);
 		nord.add(new JLabel("Vous"));
@@ -62,11 +60,8 @@ public class JpJeu extends JPanel {
 		b2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				nord.add(new JLabel("Maintenant Cliquez sur une case !"),BorderLayout.SOUTH);
 			}
 		});
-	}
-	public Jeu getJeu() {
-		return jeu;
 	}
 }

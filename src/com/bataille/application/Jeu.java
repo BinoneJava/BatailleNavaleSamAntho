@@ -103,10 +103,10 @@ public class Jeu  {
 	private void genererJeu(){
 		//
 		try {
-			int nbreNavires = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavires"));
-			int nbreNavires1CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize1"));
-			int nbreNavires2CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize2"));
-			int nbreNavires3CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize3"));
+			int nbreNavires = 5;
+			int nbreNavires1CASE = 0;
+			int nbreNavires2CASE = 1;
+			int nbreNavires3CASE = 2;
 			int nbreNavires4CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize4"));
 			int nbreNavires5CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize5"));
 			int cpt;

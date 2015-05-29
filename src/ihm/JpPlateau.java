@@ -1,11 +1,13 @@
 package ihm;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -22,13 +24,11 @@ public class JpPlateau extends JPanel {
 	private static final long serialVersionUID = 1L;
 	JButton grille[][];
 	ActionBoutonGrille actionBouton;
-	final private JpJeu con;
 
-	public JpPlateau() {
+	public JpPlateau(Ihm fenetre) {
 		this.actionBouton = new ActionBoutonGrille();
 		this.grille = new JButton[10][10];
 		this.initialisationGrille();
-		this.con = (JpJeu) (this.getParent());
 	}
 
 	/**
@@ -44,6 +44,7 @@ public class JpPlateau extends JPanel {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				this.add(grille[i][j]);
+				grille[i][j].setBackground(Color.BLUE);
 				grille[i][j].addActionListener(actionBouton);
 			}
 		}
@@ -74,18 +75,27 @@ public class JpPlateau extends JPanel {
 			choix.add(quest, BorderLayout.NORTH);
 			JPanel center = new JPanel(new GridLayout(4,1));
 			choix.add(center, BorderLayout.CENTER);
+			ButtonGroup grpRadio = new ButtonGroup();
+			
 			JRadioButton haut = new JRadioButton("Vers le Nord");
 			JRadioButton bas = new JRadioButton("Vers le Sud");
 			JRadioButton gauche = new JRadioButton("Vers l'Ouest");
 			JRadioButton droite = new JRadioButton("Vers l'Est");
+			grpRadio.add(haut);
+			grpRadio.add(bas);
+			grpRadio.add(gauche);
+			grpRadio.add(droite);
 			center.add(haut);
 			center.add(bas);
 			center.add(gauche);
 			center.add(droite);
-			
 			JButton val = new JButton("valider");
 			choix.add(val, BorderLayout.SOUTH);
 			choix.setVisible(true);
 		}
 	}
+	public void actualisationGrille(){
+		
+	}
+	public void placerBateauGrille(List<Case> cases)
 }

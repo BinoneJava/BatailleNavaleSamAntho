@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
+
+import com.bataille.application.Jeu;
 /**
  * Fenêtre du jeu de bataille navale.
  * @author Samuel
@@ -19,6 +21,7 @@ public class Ihm extends JFrame {
 	private JPanel tabJPanels[];
 	JMenu jmenu;
 	String nom;
+	Jeu jeu;
 
 	public Ihm() {
 		jmenu = new JMenu("kokokok");
@@ -53,6 +56,13 @@ public class Ihm extends JFrame {
 	}
 	public void setNom(String nom){
 		this.nom = nom;
+	}
+	public void init(){
+		jeu = new Jeu(10, 10, this.getNom());
+		jeu.setScore(0);
+	}
+	public Jeu getJeu(){
+		return this.jeu;
 	}
 
 }
