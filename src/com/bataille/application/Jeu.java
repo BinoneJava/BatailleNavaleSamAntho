@@ -7,7 +7,6 @@ import com.bataille.metier.Case;
 import com.bataille.metier.CoupException;
 import com.bataille.metier.Navire;
 import com.bataille.metier.Plateau;
-import com.bataille.util.FileUtil;
 
 /**
  * @author V902458
@@ -101,7 +100,6 @@ public class Jeu  {
 		return this.goodPlateau(plateau).getListeNav();
 	}
 	
-	@Deprecated
 	public void genererJeu(){
 		int nbreNavires1CASE = 0;
 		int nbreNavires2CASE = 1;
@@ -137,7 +135,8 @@ public class Jeu  {
 				idNavire++;
 				n = new Navire(idNavire,5,lst,false,500);
 				listeNav.add(n);
-		}	
+			}
+
 		plateauJoueurUn.setListeNav(listeNav);
 		plateauJoueurDeux.setListeNav(listeNav);	
 			
@@ -147,12 +146,6 @@ public class Jeu  {
 	}
 	
 	
-	@Deprecated
-	Plateau initialiserLeJeu(){
-		
-		//demander la taille du jeu, le nom de joueur et initaliser le score.
-		return null;
-	}	
 	
 	public Plateau getPlateauJoueurUn() {
 		return plateauJoueurUn;

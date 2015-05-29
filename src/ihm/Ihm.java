@@ -3,7 +3,6 @@ package ihm;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
-import javax.swing.JMenu;
 import javax.swing.JPanel;
 
 import com.bataille.application.Jeu;
@@ -19,13 +18,11 @@ public class Ihm extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel tabJPanels[];
-	JMenu jmenu;
-	String nom;
-	Jeu jeu;
+	private Jeu jeu;
+	private String nom;
 
 	public Ihm() {
 		this.init();
-		jmenu = new JMenu("kokokok");
 		tabJPanels = new JPanel[5];
 		tabJPanels[0] = new Accueil(this);
 		tabJPanels[1] = new JpJoueur(this);

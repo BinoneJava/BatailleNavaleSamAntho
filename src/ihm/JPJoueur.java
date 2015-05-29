@@ -6,7 +6,6 @@ package ihm;
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -66,6 +65,7 @@ public class JpJoueur extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				nom = jtNom.getText();
+				ancetre.setNom(nom);
 				ancetre.changerPage(2);
 			}
 		});
