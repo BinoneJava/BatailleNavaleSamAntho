@@ -43,7 +43,7 @@ public class JpContact extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				switch (jcbox.getSelectedIndex()) {
 				case 0:
-					URI uri = URI.create("http://sabbaye.noip.me/formulaire.html");
+					URI uri = URI.create("http://sabbaye.noip.me/Formulaire.html");
 					try {
 						Desktop.getDesktop().browse(uri);
 					} catch (IOException e1) {

@@ -72,13 +72,6 @@ public class JpPlateau extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			/*
-			 * System.out.println("hey"); try { con.getJeu().jouer(
-			 * Integer.parseInt(e.getActionCommand())/10,
-			 * Integer.parseInt(e.getActionCommand())%10,
-			 * con.getJeu().getPlateauJoueurUn()); } catch (CoupException e1) {
-			 * e1.printStackTrace(); }
-			 */
 			JButton source = (JButton) e.getSource();
 			JDialog choix = new JDialog();
 			choix.setSize(new Dimension(400, 300));
@@ -94,8 +87,9 @@ public class JpPlateau extends JPanel {
 			choixPos.addItem("Vers l'Ouest");
 			choixPos.addItem("Vers l'Est");
 			center.add(choixPos);
+			int aPlacer = lsNavires.size() - nbrNav;
 			center.add(new JLabel("Vous êtez entrain de poser un bateau de " + lsNavires.get(nbrNav).getTaille()+" cases"));
-			center.add(new JLabel("Il vous Reste" + (lsNavires.size() - nbrNav) + "bateaux a placer"));
+			center.add(new JLabel("Il vous reste" + (aPlacer) + "bateaux a placer"));
 			JButton val = new JButton("valider");
 			choix.add(val, BorderLayout.SOUTH);
 			choix.setVisible(true);

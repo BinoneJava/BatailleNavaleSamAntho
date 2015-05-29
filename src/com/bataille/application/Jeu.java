@@ -103,12 +103,12 @@ public class Jeu  {
 	
 	@Deprecated
 	public void genererJeu(){
-		int nbreNavires = 5;
+		int nbreNavires = 6;
 		int nbreNavires1CASE = 0;
 		int nbreNavires2CASE = 1;
 		int nbreNavires3CASE = 2;
-		int nbreNavires4CASE = 4;
-		int nbreNavires5CASE = 5;
+		int nbreNavires4CASE = 1;
+		int nbreNavires5CASE = 1;
 		int cpt;
 		int idNavire =0;
 		Navire n = null;

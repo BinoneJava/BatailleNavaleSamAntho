@@ -28,10 +28,11 @@ public class Accueil extends JPanel {
 	private JButton jbContact;
 	private JButton jbQuitter;
 	private Image bg;
+	private Ihm fenetre;
 
 	public Accueil(Ihm e) {
 		bg = new ImageIcon("Images\\backAc.jpg").getImage();
-
+		this.fenetre = e;
 		jbJouer = new JButton("Jouer");
 		jbContact = new JButton("Contact");
 		jbQuitter = new JButton("Quitter");
@@ -73,5 +74,7 @@ public class Accueil extends JPanel {
 
 	public void paint(Graphics g) {
 		g.drawImage(bg, 0, 0, null);
+		fenetre.repaint();
+		fenetre.revalidate();
 	}
 }
