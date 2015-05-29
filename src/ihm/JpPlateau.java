@@ -38,7 +38,6 @@ public class JpPlateau extends JPanel {
 		nbrNav = 0;
 		this.actionBouton = new ActionBoutonGrille();
 		this.grille = new JButton[10][10];
-		this.initialisationGrille();
 		this.fenetre = fenetre;
 		this.lsNavires =  fenetre.getJeu().getPlateauId(id).getListeNav();
 		this.plateau = fenetre.getJeu().getPlateauId(id);
@@ -81,7 +80,6 @@ public class JpPlateau extends JPanel {
 			 * e1.printStackTrace(); }
 			 */
 			JButton source = (JButton) e.getSource();
-			source.setText("X");
 			JDialog choix = new JDialog();
 			choix.setSize(new Dimension(400, 300));
 			choix.setLayout(new BorderLayout());
@@ -96,7 +94,8 @@ public class JpPlateau extends JPanel {
 			choixPos.addItem("Vers l'Ouest");
 			choixPos.addItem("Vers l'Est");
 			center.add(choixPos);
-			center.add(new JLabel("Vous êtez entrain de poser un bateau de " + lsNavires.get(nbrNav).getTaille()+" cases"), constraints);
+			center.add(new JLabel("Vous êtez entrain de poser un bateau de " + lsNavires.get(nbrNav).getTaille()+" cases"));
+			center.add(new JLabel("Il vous Reste" + (lsNavires.size() - nbrNav) + "bateaux a placer"));
 			JButton val = new JButton("valider");
 			choix.add(val, BorderLayout.SOUTH);
 			choix.setVisible(true);
