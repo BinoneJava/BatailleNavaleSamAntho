@@ -9,12 +9,10 @@ public class TestJeuConsole {
 
 		JeuConsole jc = new JeuConsole();
 		int score = 0;
-		
 		jc.InitPlateau();
 		jc.InitNavires();
 		jc.Accueil();
 
-		System.out.println(jc.getPlateau().getCasesOccupees());
 		//tant que le score max n'est pas atteint
 		while (score != jc.ScoreMax(jc.getPlateau().getListeNav())) {
 			jc.AfficherGrille();
@@ -25,9 +23,16 @@ public class TestJeuConsole {
 			Scanner ord = new Scanner(System.in);
 			int j = ord.nextInt();
 			
+			try {
 			jc.getPlateau().jouerCoup(i, j);
 			jc.getPlateau().actualisationCases();
 			jc.ChangerMotifGrille(i, j);
+		} catch (IllegalArgumentException iae){
+			System.out.println(iae.getMessage());
 		}
+			score = 0;
+			jc.ActualisationScore(jc.getPlateau().getListeNav(), score);
+			System.out.println("Votre score est de " + score + " pts ! \n");
+}
 	}
 }

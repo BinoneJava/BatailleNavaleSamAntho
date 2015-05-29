@@ -65,6 +65,7 @@ public class Accueil extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent r) {
+				e.quitter();
 			}
 		});
 

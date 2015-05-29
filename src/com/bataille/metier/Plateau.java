@@ -80,30 +80,51 @@ public class Plateau {
 	 */
 	public void ajouterNavire(Navire n) {
 		this.listeNav.add(n);
-		 for (Case c : n.getCases()) { this.casesOccupees.add(c); }
-	}
-
-	public Case getNextCase(Case c,boolean isH,int i) {
-		return null;
+		/*
+		 * for (Case c : n.getCases()) { this.casesOccupees.add(c); }
+		 */
 
 	}
 
-	public Case getNextCaseSwing(Case c, int index, int cordonnees, int i) {
+	@Deprecated
+	public void ranedomiserPlacement(List<Navire> lstn) {
+
+		for (Navire n : lstn) {
+			List<Case> c = placerNavire(n);
+			n.setCases(c);
+			this.casesOccupees.addAll(c);
+		}
+
+	}
+
+	public List<Case> placerNavire(Navire n) {
+		ArrayList<Case> lc = new ArrayList<Case>();
+		Case c = new Case(1, 1, false, "~");
+		boolean isH = isPlacementHorizontal();
+		for (int i = 0; i < n.getTaille(); i++) {
+			c = getNextCase(c, isH, i);
+			int x = 0;
+			int y = 0;
+			if (c.getPosx() != x && c.getPosy() != y) {
+				x = c.getPosx();
+				y = c.getPosy();
+			}
+			lc.add(c);
+		}
+		return lc;
+	}
+
+	@Deprecated
+	private Case getNextCase(Case c, boolean isH, int i) {
 		Case cn = null;
 		if (i == 0) {
-			cn = new Case(cordonnees / 10, cordonnees % 10, false, "hey");
+			cn = getRandomCase();
 		} else {
-			if (index == 1) {
-				cn = new Case(c.getPosx(), c.getPosy()+1, c.isEstTouche(),
+			if (isH) {
+				cn = new Case(c.getPosx() - 1, c.getPosy(), c.isEstTouche(),
 						c.getMotif());
-			} else if(index == 2){
+			} else {
 				cn = new Case(c.getPosx(), c.getPosy() - 1, c.isEstTouche(),
-						c.getMotif());
-			}else if(index == 3){
-				cn = new Case(c.getPosx()+1, c.getPosy(), c.isEstTouche(),
-						c.getMotif());
-			}else{
-				cn = new Case(c.getPosx()+1, c.getPosy(), c.isEstTouche(),
 						c.getMotif());
 			}
 		}
@@ -111,6 +132,34 @@ public class Plateau {
 		return cn;
 	}
 
+	private boolean isPlacementHorizontal() {
+		Random r = new Random();
+		return r.nextInt(2) == 1;
+	}
+
+	@Deprecated
+	private Case getRandomCase() {
+		Case c = null;
+		c = new Case(1, 1, false, "~");
+		Random r = new Random();
+		int xRandom = 1 + r.nextInt(this.largeur - 1);
+		int yRandom = 1 + r.nextInt(this.largeur - 1);
+		while (isCollisionPlacement(xRandom, yRandom) || yRandom < 4) {
+			xRandom = 1 + r.nextInt(this.largeur - 1);
+			yRandom = 1 + r.nextInt(this.largeur - 1);
+		}
+		c.setPosx(xRandom);
+		c.setPosy(yRandom);
+		c.setEstTouche(false);
+		try {
+			c.setMotif(FileUtil.getInstance().getPropriete("symboleCaseVide"));
+		} catch (BatailleNavaleException e) {
+			e.printStackTrace();
+		}
+		return c;
+	}
+
+	@Deprecated
 	private boolean isCollisionPlacement(int x, int y) {
 		boolean isCollision = false;
 		for (Case c : casesOccupees) {
@@ -148,6 +197,9 @@ public class Plateau {
 	 */
 	public Navire jouerCoup(int x, int y) {
 		// 1 a t on déjà joué le coup
+		if (x < 0 || y < 0 || x >= this.getLargeur() || y >= this.getLargeur()){
+			throw new IllegalArgumentException("Le coup est hors plateau !");
+		}
 		int nbreTouche = 0;
 		Navire navireTouche = null;
 		if (!coupsJoues[x][y]) {
@@ -234,5 +286,28 @@ public class Plateau {
 						.setEstTouche(true);
 			}
 		}
+	}
+	
+	public Case getNextCaseSwing(Case c, int index, int cordonnees, int i) {
+		Case cn = null;
+		if (i == 0) {
+			cn = new Case(cordonnees / 10, cordonnees % 10, false, "hey");
+		} else {
+			if (index == 1) {
+				cn = new Case(c.getPosx(), c.getPosy()+1, c.isEstTouche(),
+						c.getMotif());
+			} else if(index == 2){
+				cn = new Case(c.getPosx(), c.getPosy() - 1, c.isEstTouche(),
+						c.getMotif());
+			}else if(index == 3){
+				cn = new Case(c.getPosx()+1, c.getPosy(), c.isEstTouche(),
+						c.getMotif());
+			}else{
+				cn = new Case(c.getPosx()+1, c.getPosy(), c.isEstTouche(),
+						c.getMotif());
+			}
+		}
+
+		return cn;
 	}
 }

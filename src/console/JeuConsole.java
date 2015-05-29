@@ -81,4 +81,12 @@ public class JeuConsole {
 		}
 		return score;
 	}
+	
+	public void ActualisationScore(List<Navire> lstn, int score){
+		for (Navire n : lstn){
+			if (n.isEstCoule() == true){
+				score = score + n.getValeurScore();
+			}
+		}
+	}
 }

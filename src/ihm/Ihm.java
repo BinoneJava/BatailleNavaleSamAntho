@@ -51,6 +51,11 @@ public class Ihm extends JFrame {
 		this.repaint();
 		this.revalidate();
 	}
+	
+	public void quitter(){
+		this.setVisible(false);
+	    this.dispose();
+	}
 	public JPanel[] getTabPanel(){
 		return this.tabJPanels;
 	}
