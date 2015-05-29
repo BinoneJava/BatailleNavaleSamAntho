@@ -107,8 +107,8 @@ public class Jeu  {
 			int nbreNavires1CASE = 0;
 			int nbreNavires2CASE = 1;
 			int nbreNavires3CASE = 2;
-			int nbreNavires4CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize4"));
-			int nbreNavires5CASE = Integer.parseInt(FileUtil.getInstance().getPropriete("nbreNavireSize5"));
+			int nbreNavires4CASE = 4;
+			int nbreNavires5CASE = 5;
 			int cpt;
 			int idNavire =0;
 			Navire n = null;
