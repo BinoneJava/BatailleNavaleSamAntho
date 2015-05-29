@@ -31,16 +31,17 @@ public class JpJeu extends JPanel {
 	private JButton menu = new JButton("Menu ! ");
 	private JButton b2;
 	private String nom;
+	private JLabel spectre;
 	
 
 	public JpJeu(Ihm z) {
-		
+		this.spectre = new JLabel("Maintenant Cliquez sur une case !");
 		this.setLayout(new BorderLayout());
 		JPanel nord = new JPanel(new GridLayout(0,3));
 		this.add(nord, BorderLayout.NORTH);
 		JPanel centreLayout = new JPanel(new GridLayout(0, 2));
-		this.grille = new JpPlateau(z);
-		this.grille2 = new JpPlateau(z);
+		this.grille = new JpPlateau(z,0);
+		this.grille2 = new JpPlateau(z,1);
 		b2 = new JButton("Placez les bateaux !");
 		this.add(centreLayout, BorderLayout.CENTER);
 		nord.add(new JLabel("Vous"));
@@ -60,7 +61,7 @@ public class JpJeu extends JPanel {
 		b2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				nord.add(new JLabel("Maintenant Cliquez sur une case !"),BorderLayout.SOUTH);
+				nord.add(spectre,BorderLayout.SOUTH);
 			}
 		});
 	}

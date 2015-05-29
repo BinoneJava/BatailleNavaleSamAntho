@@ -115,17 +115,27 @@ public class Plateau {
 		return lc;
 	}
 
-	@Deprecated
-	private Case getNextCase(Case c, boolean isH, int i) {
+	public Case getNextCase(Case c,boolean isH,int i) {
+		return null;
+
+	}
+
+	public Case getNextCaseSwing(Case c, int index, int cordonnees, int i) {
 		Case cn = null;
 		if (i == 0) {
-			cn = getRandomCase();
+			cn = new Case(cordonnees / 10, cordonnees % 10, false, "hey");
 		} else {
-			if (isH) {
-				cn = new Case(c.getPosx() - 1, c.getPosy(), c.isEstTouche(),
+			if (index == 1) {
+				cn = new Case(c.getPosx(), c.getPosy()+1, c.isEstTouche(),
 						c.getMotif());
-			} else {
+			} else if(index == 2){
 				cn = new Case(c.getPosx(), c.getPosy() - 1, c.isEstTouche(),
+						c.getMotif());
+			}else if(index == 3){
+				cn = new Case(c.getPosx()+1, c.getPosy(), c.isEstTouche(),
+						c.getMotif());
+			}else{
+				cn = new Case(c.getPosx()+1, c.getPosy(), c.isEstTouche(),
 						c.getMotif());
 			}
 		}
