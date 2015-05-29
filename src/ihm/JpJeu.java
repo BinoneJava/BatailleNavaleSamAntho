@@ -62,6 +62,10 @@ public class JpJeu extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				nord.add(spectre,BorderLayout.SOUTH);
+				grille.actualiserGrille();
+				grille2.actualiserGrille();
+				//System.out.println(z.getJeu().getPlateauJoueurUn().getCasesOccupees());
+				//System.out.println(z.getJeu().getPlateauJoueurUn().getListeNav());
 			}
 		});
 	}

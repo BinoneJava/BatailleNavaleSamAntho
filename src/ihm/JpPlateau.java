@@ -9,16 +9,15 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 
+import com.bataille.metier.Case;
 import com.bataille.metier.Navire;
 import com.bataille.metier.Plateau;
-import com.bataille.metier.Case;
 
 public class JpPlateau extends JPanel {
 
@@ -30,9 +29,11 @@ public class JpPlateau extends JPanel {
 	int id;
 	ActionBoutonGrille actionBouton;
 	Ihm fenetre;
+	int nbrNav;
 
 	public JpPlateau(Ihm fenetre, int id) {
 		this.id = id;
+		nbrNav = 0;
 		this.actionBouton = new ActionBoutonGrille();
 		this.grille = new JButton[10][10];
 		this.initialisationGrille();
@@ -73,7 +74,7 @@ public class JpPlateau extends JPanel {
 			 * e1.printStackTrace(); }
 			 */
 			JButton source = (JButton) e.getSource();
-			source.setText("X");
+			System.out.println(source.getText());
 			JDialog choix = new JDialog();
 			choix.setSize(new Dimension(400, 300));
 			choix.setLayout(new BorderLayout());
@@ -82,23 +83,28 @@ public class JpPlateau extends JPanel {
 			choix.add(quest, BorderLayout.NORTH);
 			JPanel center = new JPanel(new GridLayout(4, 1));
 			choix.add(center, BorderLayout.CENTER);
-			ButtonGroup grpRadio = new ButtonGroup();
-
-			JRadioButton haut = new JRadioButton("Vers le Nord");
-			JRadioButton bas = new JRadioButton("Vers le Sud");
-			JRadioButton gauche = new JRadioButton("Vers l'Ouest");
-			JRadioButton droite = new JRadioButton("Vers l'Est");
-			grpRadio.add(haut);
-			grpRadio.add(bas);
-			grpRadio.add(gauche);
-			grpRadio.add(droite);
-			center.add(haut);
-			center.add(bas);
-			center.add(gauche);
-			center.add(droite);
+			JComboBox<String> choixPos = new JComboBox<String>();
+			choixPos.addItem("Vers le Nord");
+			choixPos.addItem("Vers le Sud");
+			choixPos.addItem("Vers l'Ouest");
+			choixPos.addItem("Vers l'Est");
+			center.add(choixPos);
 			JButton val = new JButton("valider");
 			choix.add(val, BorderLayout.SOUTH);
 			choix.setVisible(true);
+			val.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ajouterNavire(fenetre.getJeu().getPlateauId(id)
+							.getListeNav().get(nbrNav),
+							choixPos.getSelectedIndex(),
+							Integer.valueOf(source.getText()));
+
+					choix.setVisible(false);
+					nbrNav++;
+				}
+			});
 		}
 	}
 
@@ -113,14 +119,17 @@ public class JpPlateau extends JPanel {
 								.getCasesOccupees()
 								.contains(
 										fenetre.getJeu().getPlateauId(id).lstCases[i][j])) {
-					grille[i][j].setBackground(Color.GREEN);
-				} else {
 					grille[i][j].setBackground(Color.RED);
+				} else {
+					grille[i][j].setBackground(Color.GRAY);
 				}
 			}
 		}
+		if (id == 0) {
 		for (Case cassee : fenetre.getJeu().getPlateauId(id).getCasesOccupees()) {
-			this.grille[cassee.getPosx()][cassee.getPosy()].setBackground(Color.BLACK);
+			this.grille[cassee.getPosx()][cassee.getPosy()]
+						.setBackground(Color.BLACK);
+			}
 		}
 
 	}
@@ -133,6 +142,16 @@ public class JpPlateau extends JPanel {
 			c = plat.getNextCaseSwing(c, indexChoix, cordonees, i);
 			lc.add(c);
 		}
+
 		return lc;
+	}
+
+	public void ajouterNavire(Navire n, int choix, int cordonnes) {
+		n.setCases(placerBateauGrille(n, fenetre.getJeu().getPlateauId(id),
+				choix, cordonnes));
+		fenetre.getJeu().getPlateauId(id).getListeNav().add(n);
+		for (Case c : n.getCases()) {
+			fenetre.getJeu().getPlateauId(id).getCasesOccupees().add(c);
+		}
 	}
 }

@@ -24,6 +24,7 @@ public class Ihm extends JFrame {
 	Jeu jeu;
 
 	public Ihm() {
+		this.init();
 		jmenu = new JMenu("kokokok");
 		tabJPanels = new JPanel[5];
 		tabJPanels[0] = new Accueil(this);
@@ -35,6 +36,7 @@ public class Ihm extends JFrame {
 		this.setTitle("Bataille navale");
 		this.changerPage(0);
 		this.setVisible(true);
+		
 	}
 
 	/**
@@ -60,9 +62,10 @@ public class Ihm extends JFrame {
 	public void init(){
 		jeu = new Jeu(10, 10, this.getNom());
 		jeu.setScore(0);
+		jeu.genererJeu();
 	}
 	public Jeu getJeu(){
 		return this.jeu;
 	}
-
+	
 }

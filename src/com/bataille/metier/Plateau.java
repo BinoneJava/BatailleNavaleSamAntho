@@ -80,39 +80,7 @@ public class Plateau {
 	 */
 	public void ajouterNavire(Navire n) {
 		this.listeNav.add(n);
-		/*
-		 * for (Case c : n.getCases()) { this.casesOccupees.add(c); }
-		 */
-
-	}
-
-	@Deprecated
-	public void ranedomiserPlacement(List<Navire> lstn) {
-
-		for (Navire n : lstn) {
-			List<Case> c = placerNavire(n);
-			n.setCases(c);
-			this.casesOccupees.addAll(c);
-		}
-
-	}
-
-	@Deprecated
-	public List<Case> placerNavire(Navire n) {
-		ArrayList<Case> lc = new ArrayList<Case>();
-		Case c = new Case(1, 1, false, "~");
-		boolean isH = isPlacementHorizontal();
-		for (int i = 0; i < n.getTaille(); i++) {
-			c = getNextCase(c, isH, i);
-			int x = 0;
-			int y = 0;
-			if (c.getPosx() != x && c.getPosy() != y) {
-				x = c.getPosx();
-				y = c.getPosy();
-			}
-			lc.add(c);
-		}
-		return lc;
+		 for (Case c : n.getCases()) { this.casesOccupees.add(c); }
 	}
 
 	public Case getNextCase(Case c,boolean isH,int i) {
@@ -143,34 +111,6 @@ public class Plateau {
 		return cn;
 	}
 
-	private boolean isPlacementHorizontal() {
-		Random r = new Random();
-		return r.nextInt(2) == 1;
-	}
-
-	@Deprecated
-	private Case getRandomCase() {
-		Case c = null;
-		c = new Case(1, 1, false, "~");
-		Random r = new Random();
-		int xRandom = 1 + r.nextInt(this.largeur - 1);
-		int yRandom = 1 + r.nextInt(this.largeur - 1);
-		while (isCollisionPlacement(xRandom, yRandom) || yRandom < 4) {
-			xRandom = 1 + r.nextInt(this.largeur - 1);
-			yRandom = 1 + r.nextInt(this.largeur - 1);
-		}
-		c.setPosx(xRandom);
-		c.setPosy(yRandom);
-		c.setEstTouche(false);
-		try {
-			c.setMotif(FileUtil.getInstance().getPropriete("symboleCaseVide"));
-		} catch (BatailleNavaleException e) {
-			e.printStackTrace();
-		}
-		return c;
-	}
-
-	@Deprecated
 	private boolean isCollisionPlacement(int x, int y) {
 		boolean isCollision = false;
 		for (Case c : casesOccupees) {

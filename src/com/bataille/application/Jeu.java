@@ -20,6 +20,7 @@ public class Jeu  {
 	private int x;
 	private int y;
 	private int score;	
+	private Plateau[] plateaux;
 	
 
 	private int nbreCoups;
@@ -40,8 +41,9 @@ public class Jeu  {
 	 * @param nomJoueur
 	 */
 	public Jeu(int hauteur, int largeur, String nomJoueur){
-		this.plateauJoueurUn = new Plateau(hauteur, largeur, nomJoueur);
-		this.plateauJoueurDeux = new Plateau(hauteur, largeur, "Ordinateur");	
+		this.plateaux = new Plateau[2];
+		plateaux[0]=this.plateauJoueurUn = new Plateau(hauteur, largeur, nomJoueur);
+		plateaux[1]=this.plateauJoueurDeux = new Plateau(hauteur, largeur, "Ordinateur");	
 		
 	}
 	
@@ -100,54 +102,48 @@ public class Jeu  {
 	}
 	
 	@Deprecated
-	private void genererJeu(){
-		//
-		try {
-			int nbreNavires = 5;
-			int nbreNavires1CASE = 0;
-			int nbreNavires2CASE = 1;
-			int nbreNavires3CASE = 2;
-			int nbreNavires4CASE = 4;
-			int nbreNavires5CASE = 5;
-			int cpt;
-			int idNavire =0;
-			Navire n = null;
-			List<Case> lst =null;
-			List<Navire> listeNav = new ArrayList<Navire>();
-			for (int i=0; i< nbreNavires; i++){
-				for (cpt =0; cpt <nbreNavires1CASE; cpt++){
-					idNavire++;
-					n = new Navire(idNavire,1,lst,false,100);
-					listeNav.add(n);
-				}
-				for (cpt =0; cpt <nbreNavires2CASE; cpt++){
-					idNavire++;
-					n = new Navire(idNavire,2,lst,false,200);
-					listeNav.add(n);
-				}
-				for (cpt =0; cpt <nbreNavires3CASE; cpt++){
-					idNavire++;
-					n = new Navire(idNavire,3,lst,false,300);
-					listeNav.add(n);
-				}
-				for (cpt =0; cpt <nbreNavires4CASE; cpt++){
-					idNavire++;
-					n = new Navire(idNavire,4,lst,false,400);
-					listeNav.add(n);
-				}
-				for (cpt =0; cpt <nbreNavires5CASE; cpt++){
-					idNavire++;
-					n = new Navire(idNavire,5,lst,false,500);
-					listeNav.add(n);
-				}
-				
-			}	
-			plateauJoueurUn.setListeNav(listeNav);
-			plateauJoueurDeux.setListeNav(listeNav);
+	public void genererJeu(){
+		int nbreNavires = 5;
+		int nbreNavires1CASE = 0;
+		int nbreNavires2CASE = 1;
+		int nbreNavires3CASE = 2;
+		int nbreNavires4CASE = 4;
+		int nbreNavires5CASE = 5;
+		int cpt;
+		int idNavire =0;
+		Navire n = null;
+		List<Case> lst =null;
+		List<Navire> listeNav = new ArrayList<Navire>();
+		for (int i=0; i< nbreNavires; i++){
+			for (cpt =0; cpt <nbreNavires1CASE; cpt++){
+				idNavire++;
+				n = new Navire(idNavire,1,lst,false,100);
+				listeNav.add(n);
+			}
+			for (cpt =0; cpt <nbreNavires2CASE; cpt++){
+				idNavire++;
+				n = new Navire(idNavire,2,lst,false,200);
+				listeNav.add(n);
+			}
+			for (cpt =0; cpt <nbreNavires3CASE; cpt++){
+				idNavire++;
+				n = new Navire(idNavire,3,lst,false,300);
+				listeNav.add(n);
+			}
+			for (cpt =0; cpt <nbreNavires4CASE; cpt++){
+				idNavire++;
+				n = new Navire(idNavire,4,lst,false,400);
+				listeNav.add(n);
+			}
+			for (cpt =0; cpt <nbreNavires5CASE; cpt++){
+				idNavire++;
+				n = new Navire(idNavire,5,lst,false,500);
+				listeNav.add(n);
+			}
 			
-		} catch(BatailleNavaleException bne){
-			bne.printStackTrace();			
 		}	
+		plateauJoueurUn.setListeNav(listeNav);
+		plateauJoueurDeux.setListeNav(listeNav);	
 			
 		
 		
@@ -216,6 +212,9 @@ public class Jeu  {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+	public Plateau getPlateauId(int id){
+		return this.plateaux[id];
 	}
 
 
