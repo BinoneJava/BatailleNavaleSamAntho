@@ -32,11 +32,13 @@ public class JpJeu extends JPanel {
 	private JButton b2;
 	private String nom;
 	private JLabel spectre;
+	private JButton jouer;
 	
 
 	public JpJeu(Ihm z) {
 		this.spectre = new JLabel("Maintenant Cliquez sur une case !");
 		this.setLayout(new BorderLayout());
+		this.jouer = new JButton("Jouer");
 		JPanel nord = new JPanel(new GridLayout(0,3));
 		this.add(nord, BorderLayout.NORTH);
 		JPanel centreLayout = new JPanel(new GridLayout(0, 2));
@@ -47,6 +49,8 @@ public class JpJeu extends JPanel {
 		nord.add(new JLabel("Vous"));
 		nord.add(b2);
 		nord.add(new JLabel("Ordinateur"));
+		nord.add(jouer);
+		jouer.setVisible(false);
 
 		centreLayout.add(grille);
 
@@ -62,12 +66,30 @@ public class JpJeu extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				nord.add(spectre,BorderLayout.SOUTH);
-				
+				grille.initialisationGrille();
+				JButton source = (JButton)e.getSource();
+				source.setVisible(false);
+				jouer.setVisible(true);
+				z.repaint();
+				z.revalidate();
 				//grille.actualiserGrille();
 				//grille2.actualiserGrille();
 				//System.out.println(z.getJeu().getPlateauJoueurUn().getCasesOccupees());
 				//System.out.println(z.getJeu().getPlateauJoueurUn().getListeNav());
 			}
 		});
+		jouer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				grille2.initialisationGrille();
+				z.repaint();
+				z.revalidate();
+				
+			}
+		});
+	}
+	public void setNom(String nom){
+		this.nom = nom;
 	}
 }
